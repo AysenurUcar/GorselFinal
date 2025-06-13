@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselFinal.ToDoList"
+             Title="Yapılacaklar">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="PrimaryColor">#6E557C</Color>
+            <Color x:Key="SecondaryColor">#311B45</Color>
+            <Color x:Key="BackgroundColor">#F5F5F5</Color>
+            <Color x:Key="CardBackgroundColor">#FFFFFF</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="20" BackgroundColor="{DynamicResource BackgroundColor}">
+
+        <Grid RowDefinitions="Auto">
+            <Frame BackgroundColor="{DynamicResource CardBackgroundColor}"
+                   CornerRadius="10"
+                   Padding="10"
+                   BorderColor="{DynamicResource PrimaryColor}">
+                <Label Text="Yapılacaklar"
+                       TextColor="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource White}}"
+                       HorizontalTextAlignment="Center"
+                       FontSize="30"
+                       FontAttributes="Bold"/>
+            </Frame>
+        </Grid>
+
+
+        <ScrollView Padding="10">
+            <CollectionView x:Name="toDoList" SelectionMode="None">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="{DynamicResource CardBackgroundColor}"
+                               BorderColor="{DynamicResource PrimaryColor}"
+                               CornerRadius="10"
+                               Padding="10"
+                               HasShadow="True">
+                            <Grid RowDefinitions="Auto"
+                                  ColumnDefinitions="Auto, 0.7*, Auto, Auto">
+
+                                <CheckBox Grid.Row="0"
+                                          Grid.Column="0"
+                                          Color="{DynamicResource PrimaryColor}"
+                                          IsChecked="{Binding IsCompleted, Mode=TwoWay}"/>
+
+
+                                <Label Grid.Row="0"
+                                       Grid.Column="1"
+                                       TextColor="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource White}}"
+                                       Text="{Binding NoteContent}"
+                                       VerticalOptions="Center"
+                                       FontSize="16"
+                                       Padding="5"
+                                       HorizontalTextAlignment="Start"/>
+
+
+                                <Button Grid.Row="0"
+                                        Grid.Column="2"
+                                        FontFamily="Icons2"
+                                        TextColor="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource White}}"
+                                        Text="&#xe800;"
+                                        BackgroundColor="Transparent"
+                                        FontSize="18"
+                                        Padding="10"
+                                        Clicked="Edit_Clicked"
+                                        CommandParameter="{Binding Id}"/>
+
+
+                                <Button Grid.Row="0"
+                                        Grid.Column="3"
+                                        FontFamily="Icons2"
+                                        TextColor="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource White}}"
+                                        Text="&#xe801;"
+                                        BackgroundColor="Transparent"
+                                        FontSize="18"
+                                        Padding="10"
+                                        Clicked="Delete_Clicked"
+                                        CommandParameter="{Binding Id}"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+
+
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="End"
+                     VerticalOptions="End"
+                     Spacing="20">
+            <Button FontFamily="Icons2"
+                    TextColor="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource White}}"
+                    Text="Ekle" 
+                BackgroundColor="{DynamicResource PrimaryColor}"
+                    FontSize="18"
+                
+                Padding="15"
+                    CornerRadius="30"
+                    Clicked="NoteAdd_Clicked"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

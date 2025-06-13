@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselFinal.Home">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="PrimaryBlue">#1E3A8A</Color>
+            <Color x:Key="AccentBlue">#4F6DA0</Color>
+            <Color x:Key="BackgroundBlue">#F1F7FF</Color>
+            <Color x:Key="ShadowBlue">#C2D6FF</Color>
+            <Color x:Key="TextColor">#FFFFFF</Color>
+            <Color x:Key="DarkTextColor">#000000</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,40"
+            Spacing="25"
+            BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundBlue}, Dark={StaticResource MainBackgroundColor}}">
+
+            <Border
+                BackgroundColor="#1E3A8A"
+                HeightRequest="200"
+                WidthRequest="200"
+                Stroke="#4F6DA0"
+                StrokeShape="RoundRectangle 30,30,30,30"
+                StrokeThickness="2">
+                <Image Aspect="AspectFill" Source="fotograf.jpg"/>
+                <Border.Shadow>
+                    <Shadow
+                        Brush="{StaticResource ShadowBlue}"
+                        Opacity="0.8"
+                        Radius="30"
+                        Offset="0,0"/>
+                </Border.Shadow>
+            </Border>
+
+            <Label
+                Text="Ayşenur Uçar"
+                HorizontalOptions="Center"
+                FontSize="24"
+                FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light={StaticResource DarkTextColor}, Dark={StaticResource TextColor}}"/>
+
+
+            <Label
+                Text="Bartın Üniversitesi Bilgisayar Mühendisliği"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                FontSize="20"
+                TextColor="{AppThemeBinding Light={StaticResource DarkTextColor}, Dark={StaticResource TextColor}}"/>
+
+
+            <Label
+                Text="Final Ödevi"
+                HorizontalTextAlignment="Center"
+                FontSize="20"
+                FontAttributes="Italic"
+                TextColor="{AppThemeBinding Light={StaticResource DarkTextColor}, Dark={StaticResource TextColor}}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

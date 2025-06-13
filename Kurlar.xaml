@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselFinal.Kurlar"
+             Title="Kurlar">
+
+    <ScrollView BackgroundColor="#F0F4FF">
+        <!-- Açık mavi tonunda arka plan -->
+        <Grid RowDefinitions="Auto,Auto,Auto">
+            <Label Grid.Row="0" Text="Güncel Döviz Kurları" TextColor="#1D4ED8" FontSize="Large" Margin="20" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+
+            <CollectionView Grid.Row="1" x:Name="dovizliste"  Margin="20">
+                <CollectionView.Header>
+                    <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="auto">
+                        <Label Text="Döviz Adı" Grid.Column="0" TextColor="#1D4ED8" FontAttributes="Bold"/>
+                        <Label Text="Alış Fiyatı" Grid.Column="1" TextColor="#1D4ED8" FontAttributes="Bold"/>
+                        <Label Text="Satış Fiyatı" Grid.Column="2" TextColor="#1D4ED8" FontAttributes="Bold"/>
+                        <Label Text="Fark" Grid.Column="3" TextColor="#1D4ED8" FontAttributes="Bold"/>
+                    </Grid>
+                </CollectionView.Header>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="#3B82F6" CornerRadius="10" Margin="5" Padding="10" HasShadow="True">
+                            <Grid ColumnDefinitions="*,*,*,*">
+                                <Label Grid.Column="0" Text="{Binding Name}" FontSize="20" TextColor="#1E40AF"/>
+                                <Label Grid.Column="1" Text="{Binding Alis}" FontSize="20" TextColor="#1E40AF"/>
+                                <Label Grid.Column="2" Text="{Binding Satis}" FontSize="20" TextColor="#1E40AF"/>
+                                <Label Grid.Column="3" Text="{Binding Degisim}" FontSize="20" TextColor="#1E40AF"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Grid.Row="2" Text="Güncelle" Margin="20" Clicked="Button_Clicked"  
+                    BackgroundColor="#1D4ED8" BorderColor="#1D4ED8" TextColor="White" 
+                    CornerRadius="20" Padding="10,5"/>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

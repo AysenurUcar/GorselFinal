@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GorselFinal", "GorselFinal\GorselFinal.csproj", "{89E8CF7C-1AEB-4307-8EEB-265376892397}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89E8CF7C-1AEB-4307-8EEB-265376892397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89E8CF7C-1AEB-4307-8EEB-265376892397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89E8CF7C-1AEB-4307-8EEB-265376892397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89E8CF7C-1AEB-4307-8EEB-265376892397}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BDDAAD2-A866-4197-8852-45362E9909F7}
+	EndGlobalSection
+EndGlobal

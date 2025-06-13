@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselFinal.MainPage">
+
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+        <Label Text="Uygulamaya Hoşgeldiniz"/>
+
+
+        <Frame CornerRadius="20" BorderColor="#1E3A8A">
+            <StackLayout>
+                <StackLayout x:Name="loginStack" Spacing="10">
+
+                    <Label Text="Oturum Aç"/>
+                    <Entry x:Name="txtEmail" Placeholder="Email" Keyboard="Email"/>
+                    <Entry x:Name="txtPassword" Placeholder="Şifre" IsPassword="True"/>
+
+                    <Button Text="Oturum Aç" Clicked="LoginClicked" />
+                    <Button Text="Hesabım Yok" BackgroundColor="Transparent" TextColor="#0D0118" Clicked="EkranGoster"/>
+
+                </StackLayout>
+
+                <StackLayout x:Name="registerStack" Spacing="10" IsVisible="False">
+                    <Label Text="Kayıt Ol"/>
+                    <Entry x:Name="txtNickname" Placeholder="Kullanıcı Adı" Keyboard="Default"/>
+                    <Entry x:Name="txtRegisterEmail" Placeholder="Email" Keyboard="Email"/>
+                    <Entry x:Name="txtRegisterPassword" Placeholder="Şifre" IsPassword="True"/>
+
+                    <Button Text="Kayıt Ol" Clicked="RegisterClicked"/>
+                    <Button Text="Zaten Hesabım Var" BackgroundColor="Transparent" TextColor="#0D0118" Clicked="EkranGoster"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+
+</ContentPage>
